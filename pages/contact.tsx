@@ -1,16 +1,16 @@
 import { NextPage } from "next";
 import Container from "../components/Container";
-import Head from "../components/_head";
 import Header from "../components/Header";
+import Head from "../components/_head";
 
-const About: NextPage = () => {
+const Contact: NextPage = () => {
   return (
     <Container>
       <Head title="About" />
       <Header />
-      <h1>About</h1>
+      <h1>Contact</h1>
     </Container>
   );
 };
 
-export default About;
+export default Contact;
