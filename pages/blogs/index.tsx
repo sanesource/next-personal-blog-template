@@ -30,11 +30,13 @@ const Blogs: NextPage<BlogsProps> = (props) => {
 export async function getStaticProps() {
   const blogsPath = path.join("content/blogs");
   const blogs = fs.readdirSync(blogsPath);
-  const blogsContent = blogs.map((blog) => {
-    const blogContent = fs.readFileSync(path.join(blogsPath, blog));
-    const { data, content } = matter(blogContent);
-    return { data, content };
-  });
+  const blogsContent = blogs
+    .map((blog) => {
+      const blogContent = fs.readFileSync(path.join(blogsPath, blog));
+      const { data, content } = matter(blogContent);
+      return { data, content };
+    })
+    .reverse();
   return { props: { blogsContent } };
 }
 
