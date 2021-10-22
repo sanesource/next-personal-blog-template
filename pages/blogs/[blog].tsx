@@ -48,9 +48,19 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
 }
 
 export async function getStaticPaths() {
+  const blogsPath = path.join("content/blogs");
+  const blogs = fs.readdirSync(blogsPath);
+  const paths = blogs.map((blog) => {
+    return {
+      params: {
+        blog: blog.split("-").slice(1).join("-").replace(".md", ""),
+      },
+    };
+  });
+
   return {
-    paths: [],
-    fallback: "blocking",
+    paths,
+    fallback: false,
   };
 }
 
