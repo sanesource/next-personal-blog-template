@@ -1,6 +1,7 @@
 .title {
   font-size: 2.4rem;
   font-weight: 900;
+  cursor: pointer;
 }
 
 .links {

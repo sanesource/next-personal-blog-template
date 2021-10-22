@@ -17,7 +17,6 @@ const Head: NextPage<HeadProps> = (props) => {
     <NextHead>
       <title>{_title}</title>
       <meta name="description" content={_metaDescription} />
-      <link rel="icon" href="/favicon.ico" />
     </NextHead>
   );
 };
